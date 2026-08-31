@@ -1,0 +1,47 @@
+{
+  "margins": {
+    "smallMargin": "5px",
+    "blockMargin": "10px", 
+    "largeMargin": "20px"
+  },
+  "headings": {
+    "headingMargin": "0",
+    "headingTextTransform": "none",
+    "headingTextShadow": "none"
+  },
+  "layout": {
+    "contentMaxWidth": "900px"
+  },
+  "code": {
+    "codeBackgroundColor": "lightCodeBackground",
+    "codeBorderRadius": "8px",
+    "codeLineHeight": "1.4",
+    "inlineCodePadding": "0.125rem 0.25rem"
+  },
+  "slides": {
+    "slidePadding": "0 $smallMargin"
+  },
+  "blockquote": {
+    "blockquotePadding": "16px 24px",
+    "blockquoteBorderRadius": "16px",
+    "blockquoteBorderWidth": "6px",
+    "blockquoteMargin": "1rem 0"
+  },
+  "table": {
+    "tableCellPadding": "0.75rem",
+    "tableBorderOpacity": "0.2"
+  },
+  "shadows": {
+    "lightTextShadow": "1px 1px 2px rgba(255, 255, 255, 0.8)",
+    "darkTextShadow": "1px 1px 2px rgba(0, 0, 0, 0.8)",
+    "blockquoteShadow": "0 2px 8px rgba(21, 85, 96, 0.1)"
+  },
+  "transitions": {
+    "defaultTransition": "0.2s ease"
+  },
+  "positioning": {
+    "slideMarginTop15": "15%",
+    "slideMarginTop25": "25%",
+    "centerVertical": "50%"
+  }
+}

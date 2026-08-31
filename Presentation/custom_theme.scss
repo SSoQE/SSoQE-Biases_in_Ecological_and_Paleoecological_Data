@@ -1,0 +1,489 @@
+// This file is auto-generated from colors.json, fonts.json, and custom_theme.json. Do not edit directly.
+// SSoQE Custom Theme for Reveal.js Presentations
+
+/*-- scss:defaults --*/
+
+// Vertical spacing between blocks of text
+$smallMargin: 5px;
+$blockMargin: 10px;
+$largeMargin: 20px;
+
+// Colors are now loaded from _colors.scss, which is auto-generated from colors.json.
+// Do not define color variables here. Edit colors.json and regenerate _colors.scss if needed.
+@import "_colors";
+
+// Background of the presentation
+// All color assignments use direct color names from colors.json
+
+// Typography is now loaded from _fonts.scss, which is auto-generated from fonts.json.
+// Do not define font variables here. Edit fonts.json and regenerate _fonts.scss if needed.
+@import "_fonts";
+
+$mainFontSize: 30px;
+$body-line-height: 1.5;
+
+$headingMargin: 0;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: -0.02em; /* -2% tracking as per guidelines */
+$headingTextTransform: none; /* SSoQE uses title case, not uppercase */
+$headingTextShadow: none;
+$headingFontWeight: 600; /* Semibold as per guidelines */
+
+$heading1Size: 2.5em; /* 36-44px equivalent */
+$heading1TextShadow: none;
+$heading2Size: 1.9em; /* 28-32px equivalent */
+$heading3Size: 1.4em; /* 22-24px equivalent */
+$heading4Size: 1em;
+
+// Layout
+$content-max-width: 900px;
+
+/*-- scss:rules --*/
+
+/* General text styling */
+body {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  line-height: $body-line-height;
+  color: $body-color;
+  background-color: $backgroundColor !important;
+}
+
+/* Code styling (default and reveal) */
+pre,
+.reveal pre,
+code,
+.reveal code {
+  background-color: $cambridgeBlue !important; /* Light Cambridge Blue */
+  color: $body-color;
+  border-radius: 8px; /* More rounded as per brand guidelines */
+  line-height: 1.4;
+  font-family: $monospaceFont;
+  border: none; /* Remove border for cleaner look */
+}
+
+pre,
+.reveal pre {
+  padding: $smallMargin;
+}
+
+code,
+.reveal code {
+  background-color: $midnightGreen !important;
+  color: $satinSheenGold !important;
+  font-style: italic;
+  padding: 0.125rem 0.25rem;
+}
+
+pre code,
+.reveal pre code {
+  background-color: transparent !important;
+  color: $body-color !important; /* Black text for code blocks */
+  font-style: normal !important; /* Override italic from inline code */
+  padding: $smallMargin;
+  position: relative;
+  /* Ensure line highlighting works */
+  z-index: 0;
+  /* Prevent conflicts with overlays */
+}
+
+/* Hide scrollbars for WebKit browsers */
+pre::-webkit-scrollbar,
+.reveal pre::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbars and ensure proper text wrapping */
+.reveal pre,
+.reveal .slides pre,
+.reveal .slides section pre,
+div.sourceCode,
+div.sourceCode pre,
+.cell-code pre,
+.hljs {
+  overflow: visible !important;
+  max-width: 100% !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}
+
+.reveal pre::-webkit-scrollbar,
+.reveal .slides pre::-webkit-scrollbar,
+.reveal .slides section pre::-webkit-scrollbar,
+div.sourceCode::-webkit-scrollbar,
+div.sourceCode pre::-webkit-scrollbar,
+.cell-code pre::-webkit-scrollbar,
+.hljs::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* Quarto-specific code elements */
+.sourceCode code {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Fix for code blocks in HTML output */
+.sourceCode {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+pre a,
+.reveal pre a,
+code a,
+.reveal code a {
+  color: $body-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-color;
+    background-color: $body-color;
+  }
+}
+
+a,
+.reveal a,
+.reveal .footer a {
+  color: $link-color !important;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: $body-color !important;
+    background-color: $link-color !important;
+  }
+}
+
+/* Specific styling for links in title slides and slides with background colors */
+.reveal .slides section a,
+.reveal .title-slide a,
+.reveal .bg-midnightGreen a,
+.reveal .slide-background a {
+  color: $link-color !important;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: $backgroundColor !important;
+    background-color: $link-color !important;
+  }
+}
+
+/* Force color for all links, overriding any reveal.js defaults */
+.reveal a:link,
+.reveal a:visited,
+.reveal a:active {
+  color: $link-color !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: $headingFont !important;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  text-transform: $headingTextTransform;
+  font-weight: $headingFontWeight;
+  margin: $headingMargin;
+  color: $headingColor;
+  text-shadow: $heading1TextShadow;
+}
+
+h1,
+.reveal h1 {
+  font-size: $heading1Size !important;
+  margin-top: $blockMargin;
+}
+
+h2,
+.reveal h2 {
+  font-size: $heading2Size !important;
+  margin-top: $blockMargin;
+}
+
+h3,
+.reveal h3 {
+  font-size: $heading3Size !important;
+  margin-top: $smallMargin;
+}
+
+h4,
+.reveal h4 {
+  font-size: $heading4Size !important;
+  margin-top: $smallMargin;
+}
+
+/* Additional Reveal.js specific heading font rules */
+.reveal .slides section .fragment h1,
+.reveal .slides section .fragment h2,
+.reveal .slides section .fragment h3,
+.reveal .slides section .fragment h4,
+.reveal .slides section h1,
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section h4 {
+  font-family: $headingFont !important;
+}
+
+/* Ensure heading classes also use the correct font */
+.text-font-heading,
+.reveal .text-font-heading {
+  font-family: $headingFont !important;
+}
+
+/* List styling */
+ul {
+  padding-left: 0;
+  margin-left: $blockMargin;
+}
+
+ul ul {
+  margin-left: $blockMargin;
+}
+
+/* Utility text classes */
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-strike {
+  text-decoration: line-through;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-normal {
+  text-transform: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-smaller {
+  font-size: $mainFontSize * 0.7 !important;
+}
+
+.text-tiny {
+  font-size: $mainFontSize * 0.3 !important;
+}
+
+.text-larger {
+  font-size: $mainFontSize * 1.3 !important;
+}
+
+.text-size-heading1 {
+  font-size: $heading1Size !important;
+}
+
+.text-size-heading2 {
+  font-size: $heading2Size !important;
+}
+
+.text-size-heading3 {
+  font-size: $heading3Size !important;
+}
+
+.text-size-heading4 {
+  font-size: $heading4Size !important;
+}
+
+.text-size-body {
+  font-size: $mainFontSize !important;
+}
+
+.text-shadow-light {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-shadow-dark {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.text-margin-bottom-15 {
+  margin-bottom: 15px !important;
+}
+
+.text-margin-top-15 {
+  margin-top: 15px;
+}
+
+/* Slide content layout */
+.reveal .slides {
+  max-width: $content-max-width;
+  margin: auto;
+  padding: 0 $smallMargin;
+}
+
+.slide-margin-top-15 {
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  -ms-transform: translateY(-15%);
+  transform: translateY(-15%);
+}
+
+.slide-margin-top-25 {
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  -ms-transform: translateY(-25%);
+  transform: translateY(-25%);
+}
+
+.center-vertical {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Constrain figures and other large block elements */
+.reveal .slides img,
+.reveal .slides figure,
+.reveal .slides video,
+.reveal .slides .reveal-image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Specialized sections */
+.reveal .title {
+  background-color: $headingColor;
+  color: $backgroundColor;
+  text-align: center;
+}
+
+.reveal .subtitle {
+  background-color: $persianGreen;
+  color: $backgroundColor;
+  text-align: center;
+}
+
+.reveal .inverse {
+  color: $backgroundColor;
+  background-color: $headingColor;
+}
+
+.reveal .exercise {
+  background-color: $link-color;
+  color: $backgroundColor;
+}
+
+/* Blockquote */
+.reveal .blockquote,
+blockquote {
+  padding: 16px 24px; /* Following brand guidelines */
+  border-radius: 16px; /* 2xl rounded corners */
+  background-color: rgba($cambridgeBlue, 0.1);
+  border-left: 6px solid $persianGreen;
+  border-top: 2px solid $cambridgeBlue;
+  border-bottom: 2px solid $cambridgeBlue;
+  border-right: 2px solid $cambridgeBlue;
+  box-shadow: 0 2px 8px rgba(21, 85, 96, 0.1); /* Soft shadow with Midnight Green */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+/* Code block */
+code {
+  background-color: $backgroundColor;
+  padding: $smallMargin;
+  border-radius: 8px;
+  font-family: $monospaceFont;
+  border: 1px solid $cambridgeBlue;
+}
+
+/* Table styling */
+.reveal table,
+table {
+  border-collapse: collapse;
+  margin-bottom: $blockMargin;
+  width: 100%;
+}
+
+.reveal table th,
+.reveal table td,
+table th,
+table td {
+  border: 1px solid rgba(31, 41, 55, 0.2); /* Black with opacity */
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.reveal table th,
+table th {
+  background-color: $midnightGreen !important;
+  color: $white !important;
+  font-weight: 600;
+  font-family: $headingFont;
+}
+
+.reveal table tr:nth-child(odd),
+table tr:nth-child(odd) {
+  background-color: rgba(161, 195, 179, 0.5) !important; /* Very light Cambridge Blue */
+}
+
+/* EXERCISE SECTION LINK OVERRIDES - Must be last to ensure precedence */
+.reveal .exercise a,
+.reveal .exercise * a,
+.reveal .slides .exercise a,
+.reveal .slides .exercise * a,
+.reveal .slides section.exercise a,
+.reveal .slides section.exercise * a {
+  color: $backgroundColor !important; /* Pure white for maximum contrast against Persian Green */
+  text-decoration: underline !important;
+  text-decoration-color: $backgroundColor !important;
+  font-weight: 600 !important;
+  background-color: transparent !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $headingColor !important;
+    background-color: $backgroundColor !important;
+    border-radius: 3px !important;
+    padding: 2px 4px !important;
+    text-decoration: underline !important;
+    text-decoration-color: $headingColor !important;
+  }
+}

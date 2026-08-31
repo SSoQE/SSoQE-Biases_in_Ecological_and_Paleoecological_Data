@@ -1,0 +1,14 @@
+project:
+  pre-render: "../00_Config_file.R"
+
+format:
+  html:
+    author: "Ondřej Mottl"
+    toc: true
+    toc-depth: 5
+    keep-md: true
+    code-link: true
+    embed-resources: true
+    code-line-numbers: true
+    theme: [default, _exercise_theme.scss]
+    highlight-style: github-light

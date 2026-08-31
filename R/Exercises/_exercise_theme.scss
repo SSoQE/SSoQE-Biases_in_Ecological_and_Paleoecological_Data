@@ -1,0 +1,197 @@
+// This file is auto-generated from colors.json and fonts.json. Do not edit directly.
+// SSoQE Exercise Theme for HTML Documents
+
+/*-- scss:defaults --*/
+
+// Define spacing variables before imports (needed by color utility classes)
+$smallMargin: 0.5rem !default;
+$blockMargin: 1.5rem !default;
+$largeMargin: 20px !default;
+
+// Import local color and font definitions
+@import "_colors";
+@import "_fonts";
+
+/*-- scss:rules --*/
+
+// Main content styling
+body {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+// Content width constraint
+.quarto-container {
+  max-width: $content-max-width;
+}
+
+// Heading styles with SSoQE brand colors
+h1, .h1 {
+  color: $midnightGreen;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+
+h2, .h2 {
+  color: $persianGreen;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+
+h3, .h3 {
+  color: $midnightGreen;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+  color: $black;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+
+// Link styling
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+// Code styling
+code {
+  background-color: $midnightGreen !important;
+  color: $satinSheenGold !important;
+  font-family: $font-family-monospace;
+  font-style: italic;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+pre {
+  background-color: $cambridgeBlue !important;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: $block-margin;
+  overflow-x: auto;
+
+  code {
+    background-color: transparent !important;
+    color: inherit !important; // Let Quarto handle syntax highlighting colors
+    font-style: normal !important; // Override italic from inline code
+    border: none;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+}
+
+// Fix Quarto code block positioning and container issues
+.cell-code, .sourceCode {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.cell-code pre, .sourceCode pre {
+  margin: 0 !important;
+  padding: 1rem !important;
+  background-color: $cambridgeBlue !important;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+// Hide the cell-code label that's appearing
+.cell-code::before, .sourceCode::before {
+  display: none !important;
+}
+
+// Ensure proper code block styling
+.cell-code code, .sourceCode code {
+  background-color: transparent !important;
+  color: inherit !important; // Let Quarto handle syntax highlighting colors
+  font-style: normal !important; // Override italic from inline code
+  padding: 0 !important;
+  border: none !important;
+}
+
+// Additional Quarto-specific code element fixes
+.sourceCode code {
+  background-color: transparent !important;
+  color: inherit !important;
+  font-style: normal !important; // Override italic from inline code
+}
+
+// Blockquote styling
+blockquote {
+  border-left: 4px solid $persianGreen;
+  background-color: rgba($cambridgeBlue, 0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+  margin-bottom: $block-margin;
+  font-style: italic;
+  border-radius: 0.375rem;
+}
+
+// Table styling
+table {
+  border-collapse: collapse;
+  margin-bottom: $block-margin;
+  width: 100%;
+
+  th, td {
+    border: 1px solid rgba($black, 0.2);
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: $midnightGreen !important;
+    color: $white !important;
+    font-weight: 600;
+  }
+
+  tr:nth-child(odd) {
+    background-color: rgba($cambridgeBlue, 0.5) !important; // Very light Cambridge Blue
+  }
+}
+
+// Utility classes for SSoQE brand colors
+.text-midnight-green { color: $midnightGreen !important; }
+.text-persian-green { color: $persianGreen !important; }
+.text-cambridge-blue { color: $cambridgeBlue !important; }
+.text-satin-sheen-gold { color: $satinSheenGold !important; }
+
+.bg-midnight-green { background-color: $midnightGreen !important; }
+.bg-persian-green { background-color: $persianGreen !important; }
+.bg-cambridge-blue { background-color: $cambridgeBlue !important; }
+.bg-satin-sheen-gold { background-color: $satinSheenGold !important; }
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .quarto-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  h1, .h1 { font-size: 1.75rem; }
+  h2, .h2 { font-size: 1.5rem; }
+  h3, .h3 { font-size: 1.25rem; }
+}

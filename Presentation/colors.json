@@ -1,0 +1,17 @@
+{
+  "primary": {
+    "white": "#F2F4F2",
+    "black": "#1F2937",
+    "midnightGreen": "#155560",
+    "persianGreen": "#509A8E",
+    "cambridgeBlue": "#A1C3B3",
+    "satinSheenGold": "#C2A337"
+  },
+  "semantic": {
+    "lightCodeBackground": "cambridgeBlue",
+    "tableStripeBackground": "cambridgeBlue",
+    "blockquoteBackground": "white",
+    "codeBlockBackground": "cambridgeBlue",
+    "shadowBackground": "midnightGreen"
+  }
+}

@@ -1,0 +1,210 @@
+```{r}
+#| label: setup
+#| include: false
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width = 7,
+  fig.height = 5,
+  fig.align = "center",
+  out.width = "100%"
+)
+
+library(countdown)
+
+# Load required packages for QR code generation
+if (!require("qrcode")) install.packages("qrcode")
+library(qrcode)
+
+if (!require("magrittr")) install.packages("magrittr")
+library(magrittr)
+
+if (!require("here")) install.packages("here")
+library(here)
+here::i_am("Presentation/presentation.qmd")
+
+include_local_figure <- function(data_source) {
+  knitr::include_graphics(
+    path = here::here(
+      "Presentation/Materials",
+      data_source
+    ),
+    error = TRUE
+  )
+}
+
+source(
+  here::here("R/set_r_theme.R")
+)
+
+# Dynamic project name generation using {here}
+project_name <- 
+  basename(here::here())
+
+# Create a cleaner display name for the lecture
+display_name <- 
+  gsub("SSoQE-", "", project_name) %>%
+  gsub("_", " ", .) %>%
+  tools::toTitleCase()
+
+# Create dynamic URLs
+github_url <- 
+  paste0(
+    "https://github.com/SSoQE/",
+     project_name
+  )
+
+slides_url <- 
+  paste0(
+    "https://ssoqe.github.io/", 
+    project_name, "/"
+  )
+```
+
+# {.title}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="80%"}
+:::
+
+::: {.column width="20%"}
+
+```{r}
+#| label: ssoqe-logo-title
+include_local_figure("Logos/SSOQE_logo3.png")
+```
+
+:::
+
+::::
+
+:::: {.r-hstack}
+::: {data-id="box1" style="background: `r ssoqe_cols['black']`; width: 135px; height: 15px; margin: 0px;"}
+:::
+
+::: {data-id="box2" style="background: `r ssoqe_cols['cambridge_blue']`; width: 405px; height: 15px; margin: 0px;"}
+:::
+
+::: {data-id="box3" style="background: `r ssoqe_cols['persian_green']`; width: 225px; height: 15px; margin: 0px;"}
+:::
+
+::: {data-id="box4" style="background: `r ssoqe_cols['satin_sheen_gold']`; width: 135px; height: 15px; margin: 0px;"}
+:::
+::::
+
+::: {.text-color-white .text-font-heading .text-size-heading2 .text-bold}
+`r display_name`
+:::
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+:::
+
+::: {.column width="80%" .text-right .text-size-body}
+[👤]()Author name
+
+[Science School of Quantitative Ecology 2025]{.text-color-black}
+
+[bit.ly/SSoQE](https://bit.ly/SSoQE){.text-color-black}
+:::
+
+::::
+
+
+## [This presentation]{.text-bold .r-fit-text} {.title}
+
+:::: {.columns}
+
+::: {.column width="70%"}
+::: {.r-fit-text}
+[😸 Code on GitHub](`r github_url`)
+
+[🖥️ Slides](`r slides_url`)
+
+[![](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+:::
+:::
+
+::: {.column width="30%"}
+```{r}
+#| label: qr_slides
+qr_slides <-
+  qrcode::qr_code(
+    slides_url,
+    ecl = "H"
+  )
+
+qrcode::generate_svg(
+  qrcode = qr_slides,
+  filename = here::here("Presentation/Materials/QR/qr_slides.svg"),
+  foreground = ssoqe_cols['white'],
+  background = ssoqe_cols['midnight_green']
+)
+
+include_local_figure("QR/qr_slides.svg")
+```
+:::
+
+::::
+
+# [Outro]{.bold .r-fit-text} {.title}
+
+## SPROuT
+
+The materials used in this presentation are further expanded in a greater detail in course [Science Powered through Reproducibility, Openness, and Teamwork (SPRouT)](https://github.com/CUNI-SPRouT) taught at Charles University.
+
+```{r}
+#| label: sprot-logo
+include_local_figure("Logos/sprout_logo.png")
+```
+
+## About me
+
+:::: {.columns}
+
+::: {.column width="25%"}
+```{r}
+#| label: personal sticker
+include_local_figure("Author/Ondrej_Mottl-transparent-shadow.png")
+```
+
+```{r}
+#| label: linktree QR
+qr_personal_web <-
+  qrcode::qr_code(
+    "https://bit.ly/ondrej_mottl",
+    ecl = "H"
+  )
+
+qrcode::generate_svg(
+  qrcode = qr_personal_web,
+  filename = here::here("Presentation/Materials/QR/qr_personal_web.svg"),
+  foreground = ssoqe_cols['black'],
+  background = ssoqe_cols['white']
+)
+
+include_local_figure("QR/qr_personal_web.svg")
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
+[Ondřej Mottl]{.bold .r-fit-text .text-color-black}
+Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
+
+Head of the 🧑‍💻 [Laboratory of Quantitative Ecology](https://ondrejmottl.github.io/lab/about_the_lab.html)
+
+* 📧 Ondrej.mottl(at)gmail.com
+* 🦋 [ondrejmottl.bsky.social](https://bsky.app/profile/ondrejmottl.bsky.social)
+* 🐱 [Github](https://github.com/OndrejMottl)
+* 🆔 [ORCID](https://orcid.org/0000-0002-9796-5081)
+* 🌐 [Personal webpage](https://ondrejmottl.github.io/)
+:::
+
+::::

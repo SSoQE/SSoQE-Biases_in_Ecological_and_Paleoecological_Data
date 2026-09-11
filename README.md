@@ -1,6 +1,5 @@
-<div align="center">
-
-<img src="https://ssoqe.github.io/SSoQE_website/photos/SSOQE_logo3.png" width="150" alt="SSoQE logo">
+::: {align="center"}
+<img src="https://ssoqe.github.io/SSoQE_website/photos/SSOQE_logo3.png" alt="SSoQE logo" width="150"/>
 
 # Biases in Ecological and Paleoecological Data
 
@@ -9,40 +8,35 @@
 [SSoQE website](https://ssoqe.github.io/SSoQE_website/) · [2026 programme](https://ssoqe.github.io/SSoQE_website/About/program.html)
 
 | **📅 Course information** | **🧰 Technical** | **📌 Status** |
-|:---:|:---:|:---:|
+|:----------------------:|:----------------------:|:----------------------:|
 | ![SSoQE 2026](https://img.shields.io/badge/SSoQE-2026-155560) | ![Type](https://img.shields.io/badge/Type-Course_Module-155560) | ![Status](https://img.shields.io/badge/Status-Migration-C2A337) |
 | ![Day](https://img.shields.io/badge/Day-Thursday-C2A337) | ![Topic](https://img.shields.io/badge/Topic-Ecological_%26_Paleoecological_Bias-155560) | ![Tools](https://img.shields.io/badge/Tools-R_%7C_Quarto-276DC3) |
-
-</div>
+:::
 
 ## 🌿 About the lesson
 
 This lesson examines how observation, sampling, preservation, aggregation, and analytical choices can bias ecological and paleoecological inference.
 
-## 📚 Migrated source material
+## **🎯 Learning goals**
 
-The repository contains an unchanged, provenance-preserving copy of the bias-related materials previously held in `SSoQE-Golem_Engineering`:
+For this session, participants learn to:
 
-- the native PowerPoint lecture deck;
-- exercises and solutions 7–8;
-- the supporting R scripts, datasets, simulations, and figures identified for those exercises.
+-  recognize common preservation, spatial, and taxonomic biases in ecological and paleontological data;
 
-These files are kept under `Source_material/SSoQE-Golem_Engineering/`. They are a migration bundle for lecturer review, not a claim that the template presentation or exercises are finished. The source repository remains unchanged until the lecturer approves the final boundary.
+- use data visualization and simulation to identify biases and test analytical assumptions;
 
-## 🚧 Repository status
+- **r**ecognize the limitations of fixed-effect regression models when handling hierarchical or clustered data;
 
-The current Quarto presentation and example exercise are inherited template placeholders. The lecturer still needs to review the migrated material, decide the final teaching structure, document dependencies and authorship, and replace the placeholders before publication.
+- implement mixed-effect models (partial pooling) to correct sample size imbalances and improve estimates without over- or underfitting.
 
-## 🛠️ Setup and rendering
+## **📚 Materials**
 
-When the Quarto materials are ready, use the repository setup workflow and render the presentation through:
+- `slides/biases.pptx` is the active lecture deck.
 
-```powershell
-Rscript R/render.R
-```
+- `R/6_exercise_lm.R` through `R/8_exercise_aic.R` are the active exercises.
 
-Do not install or restore packages during ordinary rendering.
+- The corresponding `R/*_solution*.R` files provide solutions.
 
-## 📄 Licence
+- `R/simulations/` generates demonstration data and figures.
 
-See [LICENSE](LICENSE). Migrated teaching files retain their original authorship and licence status pending lecturer review.
+- `data/` contains the ecological and paleobiological teaching datasets.

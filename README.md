@@ -8,7 +8,7 @@
 [SSoQE website](https://ssoqe.github.io/SSoQE_website/) · [2026 programme](https://ssoqe.github.io/SSoQE_website/About/program.html)
 
 | **📅 Course information** | **🧰 Technical** | **📌 Status** |
-|:----------------------:|:----------------------:|:----------------------:|
+|:--:|:--:|:--:|
 | ![SSoQE 2026](https://img.shields.io/badge/SSoQE-2026-155560) | ![Type](https://img.shields.io/badge/Type-Course_Module-155560) | ![Status](https://img.shields.io/badge/Status-Migration-C2A337) |
 | ![Day](https://img.shields.io/badge/Day-Thursday-C2A337) | ![Topic](https://img.shields.io/badge/Topic-Ecological_%26_Paleoecological_Bias-155560) | ![Tools](https://img.shields.io/badge/Tools-R_%7C_Quarto-276DC3) |
 :::
@@ -21,7 +21,7 @@ This lesson examines how observation, sampling, preservation, aggregation, and a
 
 For this session, participants learn to:
 
--  recognize common preservation, spatial, and taxonomic biases in ecological and paleontological data;
+- recognize common preservation, spatial, and taxonomic biases in ecological and paleontological data;
 
 - use data visualization and simulation to identify biases and test analytical assumptions;
 
